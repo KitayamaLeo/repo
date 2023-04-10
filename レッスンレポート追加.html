@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+	
+
+
+	<meta charset="utf-8">
+		<title>
+			レッスンレポート作成ツール
+		</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+		
+		<style>
+			
+			.sophisticated-button {
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #f7f7f7;
+  color: #555;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.sophisticated-button:hover {
+  background-color: #d9d9d9;
+  color: #333;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sophisticated-button:focus {
+  outline: none;
+}
+
+
+
+
+			.playful-button {
+				display: inline-block;
+				font-size: 1.2em;
+				padding: 10px 20px;
+				border-radius: 10px;
+				background-color: #00bcd4;
+				color: #fff;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.3s ease-in-out;
+			}
+			
+			
+			.playful-button:hover {
+				transform: scale(1.05);
+			}
+			
+			.playful-button:focus {
+				outline: none;
+			}
+			
+			.emoji {
+				position: absolute;
+				top: 0;
+				left: -50%;
+				width: 100%;
+				height: 100%;
+				font-size: 2em;
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+			}
+			
+			.playful-button:hover .emoji {
+				transform: translateX(50%);
+				opacity: 1;
+			}
+
+
+		  /* 全体のスタイル */
+		  body {
+			background-color: #292929;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		  }
+	
+		  /* フォームのスタイル */
+		  form {
+			background-color: #BDBDBD;
+			border-radius: 10px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			margin: 50px auto;
+			max-width: 800px;
+			padding: 30px;
+		}
+	
+		  h1 {
+			font-size: 48px;
+			font-weight: 700;
+			margin-bottom: 20px;
+			color: #BDBDBD;
+			text-align: center;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+		}
+
+	
+		  label {
+			display: block;
+			font-size: 18px;
+			font-weight: 700;
+			margin-bottom: 10px;
+			color: #333;
+		  }
+	
+		  input[type="text"],
+		  select {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+			transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		  }
+	
+		  input[type="text"],
+		select,
+		textarea {
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			display: block;
+			font-size: 18px;
+			margin-bottom: 20px;
+			padding: 10px;
+			width: 100%;
+		}
+	
+		  button[type="submit"] {
+			display: inline-block;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: 700;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		  }
+	
+		  button[type="submit"]:hover {
+			background-color: #388E3C;
+		  }
+		</style>
+	</head>
+	
+
+ <body>
+	<h1>
+		レッスンレポート文章生成ツール
+	</h1>
+	
+	<form>
+		
+	 <label for="sentence1">名前</label> 
+
+	 <select id="sentence1">  
+		<option value="">選択してください</option>
+<optgroup label="木曜日">
+<option value="石川侑空ちゃん">石川侑空ちゃん</option>
+<option value="野﨑琉聖くん">野﨑琉聖くん</option>
+<option value="中村豊生くん">中村豊生くん</option>
+<option value="飯野航くん">飯野航くん</option>
+<option value="宮松翔太くん">宮松翔太くん</option>
+<option value="宮松未優ちゃん">宮松未優ちゃん</option>
+<option value=""></option>
+
+
+</optgroup>
+<optgroup label="土曜日">
+<option value="土佐魁士くん">土佐魁士くん</option>
+<option value="川見優晴くん">川見優晴くん</option>
+<option value="谷本悠悟くん">谷本悠悟くん</option>
+<option value=""></option>
+<option value=""></option>
+
+</optgroup>
+</select><br>
+
+	 
+
+	<label for="sentence2">授業回数</label>
+	<select id="sentence2">
+		<option value="">選択してください</option>
+		<option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+		<option value="10">10</option>
+        <option value="11">11</option>
+        <option value=""></option>
+    
+
+	</select><br>
+    
+
+	<style>
+
+		.form-control {
+		  border-radius: 8px;
+		}
+	  </style>
+	  <div class="form-group">
+		<label for="lesson_date">授業日</label>
+		<div class="input-group">
+		  <div class="input-group-prepend">
+			<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+		  </div>
+		  <input type="date" id="lesson_date" name="lesson_date" class="form-control" required style="font-size: 20px; height: 40px;">
+		</div>
+	  </div>
+	  
+	  
+
+	<label for="sentence3">取り組んだこと1</label> 
+ <select id="sentence3">
+  <option value="">選択してください</option>
+  <option value="タイピング練習">タイピング練習</option>
+  <option value="タイピングの腕試し">タイピングの腕試し</option>
+  <option value="家庭学習で分からなかった部分">家庭学習で分からなかった部分</option>
+  <option value="前回のレッスンで理解できなかった部分">前回のレッスンで理解できなかった部分</option>
+  <option value="チャプター「花を植えよう」">チャプター「花を植えよう」</option>
+  <option value="チャプター「おつかいロボット」">チャプター「おつかいロボット」</option>
+  <option value="チャプター「にらめっこステージ」">チャプター「にらめっこステージ」</option>
+  <option value="チャプター「」">チャプター「」</option>
+  <option value="チャプター「」">チャプター「」</option>
+  <option value="チャプター「」のチャレンジモードとタイムアタック">チャプター「」のチャレンジモードとタイムアタック</option>
+  <option value="チャプター「」のPythonテキスト">チャプター「」のPythonテキスト</option>
+  <option value="チャプター14「カラフルなわが家">チャプター14「カラフルなわが家</option>
+  <option value="チャプター「」のチャレンジモード">チャプター「」のチャレンジモード</option>
+  <option value="クリエイト発表会">クリエイト発表会</option>
+  <option value=""></option>
+  <option value=""></option>
+  <option value=""></option>
+ </select><br>
+
+
+		
+
+    <label for="sentence4">
+		取り組んだこと2
+	</label>
+	  <select id="sentence4">
+        <option value="">選択してください</option>
+		<option value="タイピング練習">タイピング練習</option>
+  <option value="タイピングの腕試し">タイピングの腕試し</option>
+  <option value="家庭学習で分からなかった部分">家庭学習で分からなかった部分</option>
+  <option value="前回のレッスンで理解できなかった部分">前回のレッスンで理解できなかった部分</option>
+  <option value="チャプター「花を植えよう」">チャプター「花を植えよう」</option>
+  <option value="チャプター「おつかいロボット」">チャプター「おつかいロボット」</option>
+  <option value="チャプター「にらめっこステージ」">チャプター「にらめっこステージ」</option>
+  <option value="チャプター「」">チャプター「」</option>
+  <option value="チャプター「」">チャプター「」</option>
+  <option value="チャプター「」のチャレンジモードとタイムアタック">チャプター「」のチャレンジモードとタイムアタック</option>
+  <option value="チャプター「」のPythonテキスト">チャプター「」のPythonテキスト</option>
+  <option value="チャプター14「カラフルなわが家">チャプター14「カラフルなわが家</option>
+  <option value="チャプター「」のチャレンジモード">チャプター「」のチャレンジモード</option>
+  <option value="クリエイト発表会">クリエイト発表会</option>
+  <option value=""></option>
+  <option value=""></option>
+  <option value=""></option>
+       
+
+	  </select><br>
+
+
+
+        <label for="sentence5">取り組んだこと3</label>
+		<select id="sentence5">
+			<option value="">選択してください</option>
+			<option value="タイピング練習">タイピング練習</option>
+			<option value="タイピングの腕試し">タイピングの腕試し</option>
+			<option value="家庭学習で分からなかった部分">家庭学習で分からなかった部分</option>
+			<option value="前回のレッスンで理解できなかった部分">前回のレッスンで理解できなかった部分</option>
+			<option value="チャプター「花を植えよう」">チャプター「花を植えよう」</option>
+			<option value="チャプター「おつかいロボット」">チャプター「おつかいロボット」</option>
+			<option value="チャプター「にらめっこステージ」">チャプター「にらめっこステージ」</option>
+			<option value="チャプター「」">チャプター「」</option>
+			<option value="チャプター「」">チャプター「」</option>
+			<option value="チャプター「」のチャレンジモードとタイムアタック">チャプター「」のチャレンジモードとタイムアタック</option>
+			<option value="チャプター「」のPythonテキスト">チャプター「」のPythonテキスト</option>
+			<option value="チャプター14「カラフルなわが家">チャプター14「カラフルなわが家</option>
+			<option value="チャプター「」のチャレンジモード">チャプター「」のチャレンジモード</option>
+			<option value="クリエイト発表会">クリエイト発表会</option>
+			<option value=""></option>
+			<option value=""></option>
+			<option value=""></option>
+
+		</select><br>    
+
+		<label for="goal">レッスン目標</label>
+		<textarea id="goal" rows="1" cols="50"></textarea><br>
+
+		<label for="sentence6">タイピングの達成度1</label>
+	 <select id="sentence6">
+		<option value="">選択してください</option>
+		<option value="早くタイピングできるようになってきています。">早くタイピングできるようになってきています。</option>
+		<option value="お手本通りの指で早く正確なタイピングできています。">お手本通りの指で早くタイピングできています。</option>
+		<option value="早く正確にタイピングできるようになってきています。">早く正確にタイピングできるようになってきています。</option>
+		<option value="キーボードを見ている時間が少なくなっており素晴らしいです。">キーボードを見ている時間が少なくなっており素晴らしいです。</option>
+		<option value="ホームポジションに指を置いて、キーボードをほとんど見ずにタイピングができています。">ホームポジションに指を置いて、キーボードをほとんど見ずにタイピングができています。</option>
+		<option value="お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。">お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。</option>
+		<option value="お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。
+		打ち間違いも全くなく、ものすごい集中力で取り組めており素晴らしいです。この調子で頑張りましょう！">お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。
+		打ち間違いも全くなく、ものすごい集中力で取り組めており素晴らしいです。この調子で頑張りましょう！
+		</option>
+		<option value="ホームポジションを最後まで意識しながら正確にテキストを入力することができました。">ホームポジションを最後まで意識しながら正確にテキストを入力することができました。</option>
+		<option value="あとは練習を積んでキーボードの文字の配置を覚えるだけで早く正確なブラインドタッチができるようになると思います。">あとは練習を積んでキーボードの文字の配置を覚えるだけで早く正確なブラインドタッチができるようになると思います。</option>
+		<option value="キーボードを見る時間が少なく、ブラインドタッチができるようになってきています。完璧です">キーボードを見る時間が少なく、ブラインドタッチができるようになってきています。完璧です。</option>
+	 </select><br>
+
+
+	<label for="sentence7">タイピングのコメント</label>
+	<select id="sentence7">
+		<option value="">選択してください</option>
+		<option value="早くタイピングできるようになってきています。">早くタイピングできるようになってきています。</option>
+		<option value="お手本通りの指で早く正確なタイピングできています。">お手本通りの指で早くタイピングできています。</option>
+		<option value="早く正確にタイピングできるようになってきています。">早く正確にタイピングできるようになってきています。</option>
+		<option value="キーボードを見ている時間が少なくなっており素晴らしいです。">キーボードを見ている時間が少なくなっており素晴らしいです。</option>
+		<option value="ホームポジションに指を置いて、キーボードをほとんど見ずにタイピングができています。">ホームポジションに指を置いて、キーボードをほとんど見ずにタイピングができています。</option>
+		<option value="お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。">お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。</option>
+		<option value="お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。
+		打ち間違いも全くなく、ものすごい集中力で取り組めており素晴らしいです。この調子で頑張りましょう！">お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。
+		打ち間違いも全くなく、ものすごい集中力で取り組めており素晴らしいです。この調子で頑張りましょう！
+		</option>
+		<option value="ホームポジションを最後まで意識しながら正確にテキストを入力することができました。">ホームポジションを最後まで意識しながら正確にテキストを入力することができました。</option>
+		<option value="あとは練習を積んでキーボードの文字の配置を覚えるだけで早く正確なブラインドタッチができるようになると思います。">あとは練習を積んでキーボードの文字の配置を覚えるだけで早く正確なブラインドタッチができるようになると思います。</option>
+		<option value="キーボードを見る時間が少なく、ブラインドタッチができるようになってきています。完璧です">キーボードを見る時間が少なく、ブラインドタッチができるようになってきています。完璧です。</option>
+	</select><br>
+
+
+	    
+	<label for="sentence8">タイピングのコメント</label>
+	<select id="sentence8">
+		<option value="">選択してください</option>
+		<option value="いい調子です！">いい調子です！</option>
+		<option value="ものすごい集中力で取り組めているのでこれからもこの調子で頑張りましょう！">ものすごい集中力で取り組めているのでこれからもこの調子で頑張りましょう！</option>
+		<option value="この調子で頑張りましょう！">この調子で頑張りましょう！</option>
+		<option value="練習の成果がよく表れています！">練習の成果がよく表れています！</option>
+		<option value="早くタイピングできるようになってきています。">早くタイピングできるようになってきています。</option>
+		<option value="お手本通りの指で早く正確なタイピングできています。">お手本通りの指で早くタイピングできています。</option>
+		<option value="早く正確にタイピングできるようになってきています。">早く正確にタイピングできるようになってきています。</option>
+		<option value="キーボードを見ている時間が少なくなっており素晴らしいです。">キーボードを見ている時間が少なくなっており素晴らしいです。</option>
+		<option value="ホームポジションに指を置いて、キーボードをほとんど見ずにタイピングができています。">ホームポジションに指を置いて、キーボードをほとんど見ずにタイピングができています。</option>
+		<option value="お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。">お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。</option>
+		<option value="お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。
+		打ち間違いも全くなく、ものすごい集中力で取り組めており素晴らしいです。この調子で頑張りましょう！">お手本通りの指で正確なタイピングが出来ており、ホームポジションへの意識も完璧でした。
+		打ち間違いも全くなく、ものすごい集中力で取り組めており素晴らしいです。この調子で頑張りましょう！
+		</option>
+		<option value="ホームポジションを最後まで意識しながら正確にテキストを入力することができました。">ホームポジションを最後まで意識しながら正確にテキストを入力することができました。</option>
+		<option value="あとは練習を積んでキーボードの文字の配置を覚えるだけで早く正確なブラインドタッチができるようになると思います。">あとは練習を積んでキーボードの文字の配置を覚えるだけで早く正確なブラインドタッチができるようになると思います。</option>
+		<option value="キーボードを見る時間が少なく、ブラインドタッチができるようになってきています。完璧です">キーボードを見る時間が少なく、ブラインドタッチができるようになってきています。完璧です。</option>
+		<option value=""></option>
+     
+	</select><br>
+
+
+	
+
+	<label for="whatdidhedo">ミッションモードで取り組んだこと</label>
+	<textarea id="whatdidhedo" rows="4" cols="50"></textarea><br>
+	
+
+
+
+
+	<label for="sentence9">ミッションモードのコメント</label>
+	<select id="sentence9">
+		<option value="">選択してください</option>
+		<option value="自分で考えて理解する力が極めて高いです。">自分で考えて理解する力が極めて高いです。</option>
+		<option value="コーチのアドバイスを聞きつつ、最後まで集中して取り組み、ステージを進めることができました。">とても高い難易度に設定されているため、途中何度か手が止まってしまう事がありましたが、コーチのアドバイスを聞きつつ、最後まで集中して取り組み、ステージを進めることができました。">コーチのアドバイスを聞きつつ、最後まで集中して取り組み、ステージを進めることができました。">とても高い難易度に設定されているため、途中何度か手が止まってしまう事がありましたが、コーチのアドバイスを聞きつつ、最後まで集中して取り組み、ステージを進めることができました。</option>
+		<option value="とても高い難易度に設定されているため、途中何度か手が止まってしまう事がありましたが、コーチのアドバイスを聞きつつ、最後まで集中して取り組み、ステージを進めることができました。">とても高い難易度に設定されているため、途中何度か手が止まってしまう事がありましたが、コーチのアドバイスを聞きつつ、最後まで集中して取り組み、ステージを進めることができました。</option>
+		<option value="ほとんど自分の力で考えながら、最後まで集中してステージを進めることが出来ました。">ほとんど自分の力で考えながら、最後まで集中してステージを進めることが出来ました。</option>
+		<option value="これまで取り組んできた中で一番難しいコースで苦戦しましたがコーチと一緒に考え、試行錯誤を繰り返しながら挑戦し、最終的にSクリアでクリアすることが出来ました。最高難度のコースでしたが、最後まで投げ出すことなく本当によく頑張ってくれました">これまで取り組んできた中で一番難しいコースで苦戦しましたがコーチと一緒に考え、試行錯誤を繰り返しながら挑戦し、最終的にSクリアでクリアすることが出来ました。最高難度のコースでしたが、最後まで投げ出すことなく本当によく頑張ってくれました</option>
+		<option value="チャプター14は変数という難しい単元を扱うステージで、コースの一つ一つがとても難しいため進めていくのにとても苦労しましたが、　はほとんど全てのコースを自分の力で考え、理解しながらクリアすることが出来ました。">チャプター14は変数という難しい単元を扱うステージで、コースの一つ一つがとても難しいため進めていくのにとても苦労しましたが、　はほとんど全てのコースを自分の力で考え、理解しながらクリアすることが出来ました。</option>
+		<option value="難しいコースでも根気強く取り組む姿勢と自分で理解する　の理解力は本当に素晴らしいです。">難しいコースでも根気強く取り組む姿勢と自分で理解する　の理解力は本当に素晴らしいです。</option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+	</select><br>
+
+
+
+	
+
+	<label for="jitakugakusyu">自宅学習</label>
+	<textarea id="jitakugakusyu" rows="4" cols="50"></textarea><br>
+
+	<label for="jtkgks">自宅学習のテンプレ</label>
+	<select id="sentence9">
+		<option value="">選択してください</option>
+		<option value="自宅学習に関してはまったくできていなくても大丈夫です。
+		自宅学習でわからない部分があれば次のレッスンでコーチと一緒に考えましょう！">自宅学習に関してはまったくできていなくても大丈夫です。
+		自宅学習でわからない部分があれば次のレッスンでコーチと一緒に考えましょう！</option>
+		<option value="すごく高い目標ですが頑張って挑戦してみてください！
+		次回のレッスンも楽しみにしています！
+		">すごく高い目標ですが頑張って挑戦してみてください！
+		次回のレッスンも楽しみにしています！
+		</option>
+		<option value="特に　はとても難しいのでもしわからなければ次回のレッスンで一緒に考えながら解決したいと考えています。
+
+
+		次回のレッスンも一緒に頑張りましょう！">特に はとても難しいのでもしわからなければ次回のレッスンで一緒に考えながら解決したいと考えています。
+
+		次回のレッスンも一緒に頑張りましょう！</option>
+		<option value=""></option>
+	</select><br>
+
+	
+	
+	
+	<button type="button" onclick="combineSentences()" class="sophisticated-button">
+		<span>生成する</span>
+	  </button>
+
+	  
+ </form>
+
+ <label for="result" style="font-size: 20px; font-weight: bold; color: #BDBDBD;">レッスンレポート：</label><br>
+ <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; box-shadow: 2px 2px 2px #ccc;">
+  <textarea id="result" rows="10" cols="50" style="font-size: 16px; border: none;"></textarea>
+  
+  <button onclick="copyText()" class="playful-button">
+	<span>コピーする</span>
+	<span class="emoji">📋</span>
+  </button>
+  
+ </div>
+
+ <script>
+  function copyText() {
+    var copyTextarea = document.querySelector("#result");
+    copyTextarea.select();
+    document.execCommand("copy");
+  }
+ </script>
+
+
+ <script>
+	function combineSentences() {
+		// フォームから各選択されたフィールドの値を取得
+		var sentence1 = document.getElementById("sentence1").value;
+		var sentence2 = document.getElementById("sentence2").value;
+		var sentence3 = document.getElementById("sentence3").value;
+        var sentence4 = document.getElementById("sentence4").value;
+        var sentence5 = document.getElementById("sentence5").value;
+		var sentence6 = document.getElementById("sentence6").value;
+		var sentence7 = document.getElementById("sentence7").value;
+		var sentence8 = document.getElementById("sentence8").value;
+		var sentence9 = document.getElementById("sentence9").value;
+		var goal = document.getElementById("goal").value;
+		var lesson_date = document.getElementById("lesson_date").value;
+		var whatdidhedo = document.getElementById("whatdidhedo").value;
+		var jitakugakusyu = document.getElementById("jitakugakusyu").value;
+
+		// 各文章を結合して、結果をテキストエリアに表示
+		var combinedSentence = "【" +sentence1 + "レッスンレポート第" + sentence2 + "回】" + lesson_date + "\n\n" ;
+        var combinedSentence2 ="本日は" +sentence3 +"、" +sentence4 + sentence5 + "に取り組みました。\n\n" ;
+		var combinedSentence3 = "本日のレッスン目標は「" + goal + "」でした。\n\n\n"   ;
+		var combinedSentence4 = "---タイピング--- \n" + sentence6 + sentence7 + sentence8 +"\n\n";
+		var combinedSentence5 = "---ミッションモード--- \n" + whatdidhedo + sentence9 +"\n\n" ;
+		var combinedSentence6 = "◇◇自宅学習目標◇◇ \n" + jitakugakusyu ;
+
+		document.getElementById("result").innerHTML 
+		= combinedSentence + combinedSentence2 + combinedSentence3 + combinedSentence4
+		+ combinedSentence5 + combinedSentence6 ;
+	}
+ </script>
+
+
+
+
+
+
+<div>
+	<a href="https://yarukiswitch.playgram.tech/ja/webui/">
+	  <button class="cta-button">Playgram LMS</button>
+	</a>
+  </div>
+  
+  <style>
+	.cta-button {
+	  display: inline-block;
+	  font-size: 1.2em;
+	  padding: 10px 20px;
+	  border-radius: 10px;
+	  background-color: #ff9800;
+	  color: #fff;
+	  box-shadow: 0 5px 0 #e64a19;
+	  transition: box-shadow 0.2s ease-in-out;
+	}
+  
+	.cta-button:hover,
+	.cta-button:focus {
+	  box-shadow: 0 8px 0 #e64a19;
+	  transform: translateY(-3px);
+	}
+  
+	.cta-button:active {
+	  box-shadow: none;
+	  transform: translateY(0);
+	}
+  </style>
+
+
+
+
+
+<div style="text-align: center;">
+	<a href="file:///C:/Users/kitay/Downloads/%E3%83%AC%E3%82%B9%E3%83%AC%E3%83%9D%E4%BD%9C%E6%88%90.html">
+	  <button class="ctb-button">ページ上部へ</button>
+	</a>
+  </div>
+  
+  <style>
+	.ctb-button {
+	  display: inline-block;
+	  font-size: 1.2em;
+	  padding: 10px 20px;
+	  border-radius: 10px;
+	  background-color: #ff9800;
+	  color: #fff;
+	  box-shadow: 0 5px 0 #e64a19;
+	  transition: box-shadow 0.2s ease-in-out;
+	}
+  
+	.ctb-button:hover,
+	.ctb-button:focus {
+	  box-shadow: 0 8px 0 #e64a19;
+	  transform: translateY(-3px);
+	}
+  
+	.ctb-button:active {
+	  box-shadow: none;
+	  transform: translateY(0);
+	}
+  </style>
+  
+
+          <br><br><br>
+ </body>
+</html>
